@@ -6,11 +6,15 @@ import re
 from typing import NamedTuple, Optional
 
 import pytz
+from dotenv import load_dotenv
 
 import exceptions
 from categories import Categories
 from gsheets import get_spreadsheet
 from helpers import get_env_var
+
+# Load environment variables from .env file
+load_dotenv()
 
 encoded_service_acc_info = os.environ["GOOGLE_SERVICE_ACCOUNT"]
 client_secret = base64.b64decode(encoded_service_acc_info).decode()

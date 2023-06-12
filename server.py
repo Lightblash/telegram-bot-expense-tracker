@@ -3,11 +3,15 @@ import logging
 import os
 
 from aiogram import Bot, Dispatcher, executor, types
+from dotenv import load_dotenv
 
 import exceptions
 import expenses
 from categories import Categories
 from middlewares import AccessMiddleware
+
+# Load environment variables from .env file
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 
